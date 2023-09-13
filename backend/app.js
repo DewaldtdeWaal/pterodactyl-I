@@ -72,23 +72,15 @@ const nodemailer = require("nodemailer")
 
 
 app.listen(5000, () => {
-  console.log()
+
 })
 
 app.get('/', (req,res) =>{
 
-  sendEmail()
-  .then(response => res.send(response.message))
-  .catch(error => res.status(500).send(error.message))
+
 })
 
-mongoose.connect(gvar.MongooseConnectionString, {useNewUrlParser: true})
-.then(()=>{
-console.log('Connected to database')
-})
-.catch(()=>{
-console.log('Connection Failed')
-});
+
 
 
 const handleConnectionError = (error) => {
@@ -107,6 +99,8 @@ mongoose.connect(gvar.MongooseConnectionString, {useNewUrlParser:true})
   console.log("Connected to Database")
 })
 .catch(handleConnectionError)
+
+
 admin.CreateAdmin();
 
 app.use(bodyParser.json());
