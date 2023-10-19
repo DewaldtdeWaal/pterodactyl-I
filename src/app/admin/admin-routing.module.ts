@@ -4,7 +4,8 @@ import { AdminComponent } from './admin.component';
 import { UsersPageComponent } from './users-page/users-page.component';
 
 const routes: Routes = [
-  {path:'', component:AdminComponent, children:[{path:'', component:UsersPageComponent}]}
+  {path:'', component:AdminComponent,
+  children: [{path:'', component:UsersPageComponent}] }
 ];
 
 @NgModule({

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { PublicRoutingModule } from './public-routing.module';
 import { PublicComponent } from './public.component';
+import { LandingComponent } from './landing/landing.component';
+import { LandingModule } from './landing/landing.module';
 
 
 @NgModule({
@@ -11,7 +13,8 @@ import { PublicComponent } from './public.component';
   ],
   imports: [
     CommonModule,
-    PublicRoutingModule
+    PublicRoutingModule,
+    LandingModule
   ]
 })
 export class PublicModule { }

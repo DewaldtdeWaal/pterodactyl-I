@@ -15,7 +15,7 @@ data: any=[];
 
 constructor(private http: HttpClient){
 
-  this.NUM = 0;
+  this.NUM = 2;
 
   if (this.NUM==0){
     this.serverURL = "http://localhost:3000";
@@ -29,13 +29,6 @@ constructor(private http: HttpClient){
    this.wsURL= "ws://mac-creations.co.za";
    this.guardURL = "hawkeye";  //Cloud Server - hawkeye
  }
- else if(this.NUM == 3){
 
-  this.serverURL = "http://139.144.176.232:3000";
-  this.wsNMBMURL ="172.105.70.85";
-  this.wsURL= "ws://mac-creations.co.za";
-  this.guardURL = "hawkeye";  //Cloud Server - hawkeye
-
- }
 }
 }

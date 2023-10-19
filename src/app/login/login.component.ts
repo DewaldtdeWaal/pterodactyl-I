@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { AuthService } from 'src/app/services/auth.service';
+//import { AuthService } from 'src/app/auth.service';
 import { FormBuilder, FormGroup ,Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 @Component({
@@ -50,5 +51,13 @@ export class LoginComponent {
     }
 
     return user;
+  }
+
+  onLogin(){
+
+    console.log(this.form.value)
+
+    this.authService.login(this.form.value.username,this.form.value.password)
+
   }
 }
