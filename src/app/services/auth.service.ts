@@ -101,7 +101,7 @@ login(UserEmail:string, Password:string){
       this.saveAuthData(token,expirationDate,this.userSites, this.firstName,this.secondName,this.userEmail, this.theme)
 
       this.session = true;;
-      localStorage.setItem("session", JSON.stringify(this.session))
+      sessionStorage.setItem("session", JSON.stringify(this.session))
       this.router.navigate(['/admin']);
     }
   })
@@ -167,26 +167,26 @@ logout(){
   }
 
   private clearAuthData(){
-    localStorage.removeItem("token");
-    localStorage.removeItem("expiration");
-    localStorage.removeItem("userSites");
-    localStorage.removeItem("firstName");
-    localStorage.removeItem("secondName");
-    localStorage.removeItem("userEmail")
-   localStorage.removeItem("mode")
-   localStorage.removeItem("theme")
-   localStorage.removeItem("session");
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("expiration");
+    sessionStorage.removeItem("userSites");
+    sessionStorage.removeItem("firstName");
+    sessionStorage.removeItem("secondName");
+    sessionStorage.removeItem("userEmail")
+   sessionStorage.removeItem("mode")
+   sessionStorage.removeItem("theme")
+   sessionStorage.removeItem("session");
 
   }
 
 private getAuthData(){
-  const theme = localStorage.getItem("theme")!;
-  const token = localStorage.getItem("token");
-  const expirationDate = localStorage.getItem("expiration");
-  const firstName = localStorage.getItem("firstName")!;
-  const secondName = localStorage.getItem("secondName")!;
-  const userSites = JSON.parse(localStorage.getItem("userSites")!);
-const userEmail = (localStorage.getItem("userEmail")!);
+  const theme = sessionStorage.getItem("theme")!;
+  const token = sessionStorage.getItem("token");
+  const expirationDate = sessionStorage.getItem("expiration");
+  const firstName = sessionStorage.getItem("firstName")!;
+  const secondName = sessionStorage.getItem("secondName")!;
+  const userSites = JSON.parse(sessionStorage.getItem("userSites")!);
+const userEmail = (sessionStorage.getItem("userEmail")!);
 
   if(!token || !expirationDate ){
 return;

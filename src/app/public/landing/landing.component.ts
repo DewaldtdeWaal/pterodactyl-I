@@ -17,7 +17,7 @@ export class LandingComponent {
   session:any;
   login(){
 
-    this.session = localStorage.getItem("session")
+    this.session = sessionStorage.getItem("session")
 
     if(this.session){
       this.router.navigate(['/admin']);
